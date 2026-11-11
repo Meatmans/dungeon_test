@@ -9,7 +9,7 @@ The class hierarchy here is the backbone of the whole project:
 Add your own subclasses below. Anything that inherits from Entity is
 automatically picked up by World.step() -- you never have to register it.
 """
-
+import random
 
 class Entity:
     """Something standing on a square of the dungeon."""
@@ -103,5 +103,10 @@ class Monster(Entity):
         self.hp = 5
 
     def act(self, world) -> None:
-        # TODO(week 2): make the monster do something.
-        return None
+        enemy_possible_moves = [[-1, 0], [0,0]]
+
+        dx, dy = random.choice(enemy_possible_moves)
+        
+
+        self.move_by(world, dx, dy)
+
