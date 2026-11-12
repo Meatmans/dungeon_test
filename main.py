@@ -24,6 +24,10 @@ MOVES: dict[str, tuple[int, int]] = {
     "a": (-1, 0),
     "d": (1, 0),
     ".": (0, 0),
+    "a ": (-3,0),
+    "d ": (3,0),
+    "w ": (0,3),
+    "s ": (0,-3), 
 }
 
 
@@ -51,6 +55,10 @@ def main() -> None:
     while True:
         renderer.render(world)
 
+
+    
+
+
         command = renderer.get_command()
         if command is None or command == "q":
             print("\nYou leave the dungeon. Goodbye.")
@@ -68,6 +76,4 @@ def main() -> None:
             print("\nYou died. Better luck next run.")
             return
 
-
-if __name__ == "__main__":
-    main()
+ 
